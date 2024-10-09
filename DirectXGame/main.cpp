@@ -10,6 +10,7 @@
 // Windowsアプリでのエントリーポイント(main関数)
 int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int) {
 	WinApp* win = nullptr;
+	
 	DirectXCommon* dxCommon = nullptr;
 	// 汎用機能
 	Input* input = nullptr;
@@ -20,7 +21,7 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int) {
 
 	// ゲームウィンドウの作成
 	win = WinApp::GetInstance();
-	win->CreateGameWindow();
+	win->CreateGameWindow(L"LE2D_17_フジワラ_リオ_AL4");
 
 	// DirectX初期化処理
 	dxCommon = DirectXCommon::GetInstance();
