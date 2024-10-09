@@ -7,6 +7,7 @@
 #include "Sprite.h"
 #include "ViewProjection.h"
 #include "WorldTransform.h"
+#include "Player.h"
 
 /// <summary>
 /// ゲームシーン
@@ -40,6 +41,9 @@ public: // メンバ関数
 
 	// ビュープロジェクション
 	ViewProjection viewProjection_;
+
+	// 自キャラ
+	Player* player_ = nullptr;
 
 	/// <summary>
 	/// 毎フレーム処理
