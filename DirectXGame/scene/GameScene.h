@@ -29,6 +29,17 @@ public: // メンバ関数
 	/// </summary>
 	void Initialize();
 
+	// テクスチャハンドル
+	uint32_t textureHandle_ = 0;
+
+	// 3Dモデルの生成
+	Model* model_ = nullptr;
+
+	// ワールドトランスフォーム
+	WorldTransform worldTransform_;
+	// ビュープロジェクション
+	ViewProjection viewProjection_;
+
 	/// <summary>
 	/// 毎フレーム処理
 	/// </summary>
