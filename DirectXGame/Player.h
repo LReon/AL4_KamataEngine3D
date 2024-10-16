@@ -1,10 +1,16 @@
 #pragma once
+#include <Input.h>
 #include <Model.h>
 #include <WorldTransform.h>
 
 class Player {
 
+	
+
 public:
+	
+	// キーボード入力
+	Input* input_ = nullptr;
 
 	void Initialize(Model* model,uint32_t textureHandle);
 
