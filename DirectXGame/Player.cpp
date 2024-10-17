@@ -26,7 +26,7 @@ void Player::Update() {
 
 	// キャラクターの移動ベクトル
 	
-	float slider[3] = {0.0f, 0.0f, 0.0f};
+	float coodinateChange[3] = {0.0f, 0.0f, 0.0f};
 
 	
 
@@ -62,19 +62,21 @@ void Player::Update() {
 	}
 
 
-	slider[0] = worldTransform_.translation_.x;
-	slider[1] = worldTransform_.translation_.y;
-	slider[2] = worldTransform_.translation_.z;
+	coodinateChange[0] = worldTransform_.translation_.x;
+	coodinateChange[1] = worldTransform_.translation_.y;
+	coodinateChange[2] = worldTransform_.translation_.z;
 
 	ImGui::Begin("Debug");
+
 	ImGui::Text("X = AD Y = WS Z = QE");
-	ImGui::InputFloat3("player", slider);
+
+	ImGui::InputFloat3("coodinateChange", coodinateChange);
 	ImGui::End();
 
 
-	worldTransform_.translation_.x = slider[0];
-	worldTransform_.translation_.y = slider[1];
-	worldTransform_.translation_.z = slider[2];
+	worldTransform_.translation_.x = coodinateChange[0];
+	worldTransform_.translation_.y = coodinateChange[1];
+	worldTransform_.translation_.z = coodinateChange[2];
 
 	
 
