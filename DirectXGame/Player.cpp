@@ -66,7 +66,7 @@ void Player::Update() {
 	coodinateChange[1] = worldTransform_.translation_.y;
 	coodinateChange[2] = worldTransform_.translation_.z;
 
-	ImGui::Begin("Debug");
+	ImGui::Begin("Player");
 
 	ImGui::Text("X = AD Y = WS Z = QE");
 
@@ -79,8 +79,15 @@ void Player::Update() {
 	worldTransform_.translation_.z = coodinateChange[2];
 
 	
+	// 移動限界座標
+	const float kMoveLimitX = 35.0f;
+	const float kMoveLimitY = 19.0f;
 
-	
+	// 範囲を超えない処理
+	worldTransform_.translation_.x = max(worldTransform_.translation_.x, -kMoveLimitX);
+	worldTransform_.translation_.x = min(worldTransform_.translation_.x, +kMoveLimitX);
+	worldTransform_.translation_.y = max(worldTransform_.translation_.y, -kMoveLimitY);
+	worldTransform_.translation_.y = min(worldTransform_.translation_.y, +kMoveLimitY);
 
 
 	// 座標移動(ベクトルの加算)

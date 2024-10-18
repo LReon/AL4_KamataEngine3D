@@ -8,6 +8,7 @@
 #include "ViewProjection.h"
 #include "WorldTransform.h"
 #include "Player.h"
+#include "DebugCamera.h"
 
 /// <summary>
 /// ゲームシーン
@@ -20,6 +21,29 @@ public: // メンバ関数
 	/// </summary>
 	GameScene();
 
+	// テクスチャハンドル
+	uint32_t textureHandle_ = 0;
+
+	// 3Dモデル
+	Model* model_ = nullptr;
+
+	// ワールドトランスフォーム
+	WorldTransform worldTransform_;
+
+	// ビュープロジェクション
+	ViewProjection viewProjection_;
+
+	// 自キャラ
+	Player* player_ = nullptr;
+
+	// デバッグカメラ
+	bool isDebugCameraActive_ = false;
+
+	DebugCamera* debugCamera_ = nullptr;
+
+
+
+
 	/// <summary>
 	/// デストラクタ
 	/// </summary>
@@ -30,20 +54,7 @@ public: // メンバ関数
 	/// </summary>
 	void Initialize();
 
-	// テクスチャハンドル
-	uint32_t textureHandle_ = 0;
-
-	// 3Dモデル
-	Model* model_ = nullptr;
 	
-	// ワールドトランスフォーム
-	WorldTransform worldTransform_;
-
-	// ビュープロジェクション
-	ViewProjection viewProjection_;
-
-	// 自キャラ
-	Player* player_ = nullptr;
 
 	/// <summary>
 	/// 毎フレーム処理
