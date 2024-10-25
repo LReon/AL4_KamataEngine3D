@@ -110,7 +110,11 @@ void GameScene::Draw() {
 	// 3Dモデル描画
 	//model_->Draw(worldTransform_, viewProjection_, textureHandle_);
 	// 自キャラの描画
-	player_->Draw(viewProjection_);
+
+	if (isDebugCameraActive_ == false) {
+		player_->Draw(viewProjection_);
+	}
+	
 	if (isDebugCameraActive_) {
 		model_->Draw(worldTransform_, debugCamera_->GetViewProjection(), textureHandle_);
 	}
